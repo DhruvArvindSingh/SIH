@@ -1,0 +1,142 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int           @id @default(autoincrement())
+  email       String        @unique @db.VarChar(255)
+  password    String        @db.VarChar(255)
+  phoneNo     String        @unique
+  firstName   String
+  lastName    String
+  createdAt   DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  potholes    Pothole[]
+  Garbage     Garbage[]
+  FallenTree  FallenTree[]
+  BrokenSign  BrokenSign[]
+  StreetLight StreetLight[]
+  Graffiti    Graffiti[]
+
+  @@map("users")
+}
+
+model Pothole {
+  id            Int      @id @default(autoincrement())
+  email         String   @db.VarChar(255)
+  originalS3URL String   @db.VarChar(255)
+  finalS3URL    String   @db.VarChar(255)
+  heliaDID      String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  district      String   @db.VarChar(255)
+  latitude      Float
+  longitude     Float
+  status        String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user          User     @relation(fields: [email], references: [email])
+
+  @@map("pothole")
+}
+
+model Garbage {
+  id            Int      @id @default(autoincrement())
+  email         String   @db.VarChar(255)
+  originalS3URL String   @db.VarChar(255)
+  finalS3URL    String   @db.VarChar(255)
+  heliaDID      String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  district      String   @db.VarChar(255)
+  latitude      Float
+  longitude     Float
+  status        String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user          User     @relation(fields: [email], references: [email])
+
+  @@map("garbage")
+}
+
+model FallenTree {
+  id            Int      @id @default(autoincrement())
+  email         String   @db.VarChar(255)
+  originalS3URL String   @db.VarChar(255)
+  finalS3URL    String   @db.VarChar(255)
+  heliaDID      String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  district      String   @db.VarChar(255)
+  latitude      Float
+  longitude     Float
+  status        String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user          User     @relation(fields: [email], references: [email])
+
+  @@map("fallen_tree")
+}
+
+model BrokenSign {
+  id            Int      @id @default(autoincrement())
+  email         String   @db.VarChar(255)
+  originalS3URL String   @db.VarChar(255)
+  finalS3URL    String   @db.VarChar(255)
+  heliaDID      String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  district      String   @db.VarChar(255)
+  latitude      Float
+  longitude     Float
+  status        String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user          User     @relation(fields: [email], references: [email])
+
+  @@map("broken_sign")
+}
+
+model StreetLight {
+  id            Int      @id @default(autoincrement())
+  email         String   @db.VarChar(255)
+  originalS3URL String   @db.VarChar(255)
+  finalS3URL    String   @db.VarChar(255)
+  heliaDID      String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  district      String   @db.VarChar(255)
+  latitude      Float
+  longitude     Float
+  status        String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user          User     @relation(fields: [email], references: [email])
+
+  @@map("street_light")
+}
+
+model Graffiti {
+  id            Int      @id @default(autoincrement())
+  email         String   @db.VarChar(255)
+  originalS3URL String   @db.VarChar(255)
+  finalS3URL    String   @db.VarChar(255)
+  heliaDID      String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  district      String   @db.VarChar(255)
+  latitude      Float
+  longitude     Float
+  status        String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user          User     @relation(fields: [email], references: [email])
+
+  @@map("graffiti")
+}
