@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Detection API Test</title>
+</head>
+<body>
+    <h1>ML Detection API Test</h1>
+
+    <h2>Pothole Detection</h2>
+    <div>
+        <input type="file" id="potholeFile" accept="image/*">
+        <button type="button" onclick="uploadImage('pothole')">Upload & Detect</button>
+    </div>
+    <div id="potholeResult"></div>
+
+    <h2>Fallen Tree Detection</h2>
+    <div>
+        <input type="file" id="fallentreeFile" accept="image/*">
+        <button type="button" onclick="uploadImage('fallentree')">Upload & Detect</button>
+    </div>
+    <div id="fallentreeResult"></div>
+
+    <h2>Broken Signage Detection</h2>
+    <div>
+        <input type="file" id="brokensignageFile" accept="image/*">
+        <button type="button" onclick="uploadImage('brokensignage')">Upload & Detect</button>
+    </div>
+    <div id="brokensignageResult"></div>
+
+    <h2>Garbage Detection</h2>
+    <div>
+        <input type="file" id="garbageFile" accept="image/*">
+        <button type="button" onclick="uploadImage('garbage')">Upload & Detect</button>
+    </div>
+    <div id="garbageResult"></div>
+
+    <h2>Streetlight Detection</h2>
+    <div>
+        <input type="file" id="streetlightFile" accept="image/*">
+        <button type="button" onclick="uploadImage('streetlight')">Upload & Detect</button>
+    </div>
+    <div id="streetlightResult"></div>
+
+    <script>
+        async function uploadImage(endpoint) {
+            const fileInput = document.getElementById(endpoint + 'File');
+            const resultDiv = document.getElementById(endpoint + 'Result');
+
+            if (!fileInput.files[0]) {
+                resultDiv.innerHTML = '<p>Please select a file first.</p>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<p>Processing...</p>'; // Show loading state
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch(`http://localhost:8000/${endpoint}`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    resultDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+                    return;
+                }
+
+                let html = '<h3>Results:</h3>';
+                html += `<p>Total detections: ${data.total_detections}</p>`;
+
+                // Priority field varies by endpoint
+                let priority = data.road_priority || data.fallentree_priority || data.brokensignage_priority || data.garbage_priority || data.streetlight_priority;
+                if (priority) {
+                    html += `<p>Priority: ${priority}</p>`;
+                }
+
+                if (data.detections && data.detections.length > 0) {
+                    html += '<h4>Detections:</h4><ul>';
+                    data.detections.forEach(det => {
+                        html += `<li>${det.class} - Confidence: ${det.confidence.toFixed(2)}`;
+                        if (det.priority) html += ` - Priority: ${det.priority}`;
+                        html += '</li>';
+                    });
+                    html += '</ul>';
+                } else {
+                    html += '<p>No detections found.</p>';
+                }
+
+                if (data.annotated_image) {
+                    html += `<h4>Annotated Image:</h4><img src="data:image/jpeg;base64,${data.annotated_image}" style="max-width: 100%;">`;
+                } else {
+                    html += '<p>No annotated image available.</p>';
+                }
+
+                resultDiv.innerHTML = html;
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -9,10 +9,12 @@ import {
     garbagePost,
     brokenSignPost,
     fallenTreePost,
-    graffitiPost
+    graffitiPost,
+    dashboardGet
 } from "./controllers/index.js";
 import hash_pass from "./middleware/hash_pass.js";
 import verify from "./middleware/verify.js";
+import verify_image from "./middleware/verify_image.js";
 import cors from "cors";
 
 
@@ -20,8 +22,10 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+// Increase payload size limits for image uploads (base64 images can be large)
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cors());
 
 app.get('/health', healthGet);
@@ -41,13 +45,15 @@ app.post('/api/v1/auth/verify', verify, (req, res) => {
 });
 
 // Complaint Endpoints
-app.post('/api/v1/pothole', verify, potholePost);
-app.post('/api/v1/street-light', verify, streetLightPost);
-app.post('/api/v1/garbage', verify, garbagePost);
-app.post('/api/v1/broken-sign', verify, brokenSignPost);
-app.post('/api/v1/fallen-tree', verify, fallenTreePost);
-app.post('/api/v1/graffiti', verify, graffitiPost);
+app.post('/api/v1/pothole', verify, verify_image, potholePost);
+app.post('/api/v1/street-light', verify, verify_image, streetLightPost);
+app.post('/api/v1/garbage', verify, verify_image, garbagePost);
+app.post('/api/v1/broken-sign', verify, verify_image, brokenSignPost);
+app.post('/api/v1/fallen-tree', verify, verify_image, fallenTreePost);
+app.post('/api/v1/graffiti', verify, verify_image, graffitiPost);
 
+// Dashboard Endpoint
+app.post('/api/v1/dashboard', verify, dashboardGet);
 
 
 // Add error handling for uncaught exceptions and unhandled rejections

@@ -21,7 +21,15 @@ interface JWTPayload {
 const JWT_SECRET: string = process.env.JWT_SECRET as string;
 
 export default function verify(req: Request, res: Response, next: NextFunction): void {
-    const token = req.body.token;
+    // Check for token in body first (for POST requests), then in Authorization header (for GET requests)
+    let token = req.body?.token;
+
+    if (!token) {
+        const authHeader = req.headers.authorization;
+        if (authHeader && authHeader.startsWith('Bearer ')) {
+            token = authHeader.substring(7); // Remove 'Bearer ' prefix
+        }
+    }
 
     console.log(`token = ${token}`);
     if (token) {
@@ -37,6 +45,10 @@ export default function verify(req: Request, res: Response, next: NextFunction):
                 const payload = decoded as JWTPayload;
                 // Add email to both req and req.body for backward compatibility
                 req.userEmail = payload.email;
+                // Initialize req.body if it doesn't exist (for GET requests)
+                if (!req.body) {
+                    req.body = {};
+                }
                 req.body.email = payload.email;
                 console.log("JWT verified for user:", payload.email);
                 next();

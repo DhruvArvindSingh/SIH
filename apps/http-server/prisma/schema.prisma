@@ -33,110 +33,209 @@ model User {
   @@map("users")
 }
 
+model Images {
+  id        Int      @id @default(autoincrement())
+  imageHash String   @unique @db.VarChar(255)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("images")
+}
+
 model Pothole {
-  id            Int      @id @default(autoincrement())
-  email         String   @db.VarChar(255)
-  originalS3URL String   @db.VarChar(255)
-  finalS3URL    String   @db.VarChar(255)
-  heliaDID      String   @db.VarChar(255)
-  city          String   @db.VarChar(255)
-  district      String   @db.VarChar(255)
-  latitude      Float
-  longitude     Float
-  status        String   @db.VarChar(255)
-  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
-  user          User     @relation(fields: [email], references: [email])
+  id               Int      @id @default(autoincrement())
+  email            String   @db.VarChar(255)
+  originalS3URL    String   @db.VarChar(255)
+  finalS3URL       String   @db.VarChar(255)
+  heliaDID         String   @db.VarChar(255)
+  city             String   @db.VarChar(255)
+  district         String   @db.VarChar(255)
+  latitude         Float
+  longitude        Float
+  status           String   @db.VarChar(255)
+  // Extended location fields
+  roadName         String?  @db.VarChar(255)
+  state            String?  @db.VarChar(255)
+  country          String?  @db.VarChar(255)
+  postalCode       String?  @db.VarChar(50)
+  neighborhood     String?  @db.VarChar(255)
+  landmark         String?  @db.VarChar(255)
+  placeId          String?  @db.VarChar(255)
+  formattedAddress String?  @db.Text
+  placeTypes       String?  @db.Text // JSON array stored as text
+  // ML detection fields
+  mlDetections     String?  @db.Text // JSON array of detections
+  mlPriority       String?  @db.VarChar(50)
+  mlConfidence     Float? // Average confidence of detections
+  totalDetections  Int? // Number of objects detected
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user             User     @relation(fields: [email], references: [email])
 
   @@map("pothole")
 }
 
 model Garbage {
-  id            Int      @id @default(autoincrement())
-  email         String   @db.VarChar(255)
-  originalS3URL String   @db.VarChar(255)
-  finalS3URL    String   @db.VarChar(255)
-  heliaDID      String   @db.VarChar(255)
-  city          String   @db.VarChar(255)
-  district      String   @db.VarChar(255)
-  latitude      Float
-  longitude     Float
-  status        String   @db.VarChar(255)
-  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
-  user          User     @relation(fields: [email], references: [email])
+  id               Int      @id @default(autoincrement())
+  email            String   @db.VarChar(255)
+  originalS3URL    String   @db.VarChar(255)
+  finalS3URL       String   @db.VarChar(255)
+  heliaDID         String   @db.VarChar(255)
+  city             String   @db.VarChar(255)
+  district         String   @db.VarChar(255)
+  latitude         Float
+  longitude        Float
+  status           String   @db.VarChar(255)
+  // Extended location fields
+  roadName         String?  @db.VarChar(255)
+  state            String?  @db.VarChar(255)
+  country          String?  @db.VarChar(255)
+  postalCode       String?  @db.VarChar(50)
+  neighborhood     String?  @db.VarChar(255)
+  landmark         String?  @db.VarChar(255)
+  placeId          String?  @db.VarChar(255)
+  formattedAddress String?  @db.Text
+  placeTypes       String?  @db.Text // JSON array stored as text
+  // ML detection fields
+  mlDetections     String?  @db.Text // JSON array of detections
+  mlPriority       String?  @db.VarChar(50)
+  mlConfidence     Float? // Average confidence of detections
+  totalDetections  Int? // Number of objects detected
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user             User     @relation(fields: [email], references: [email])
 
   @@map("garbage")
 }
 
 model FallenTree {
-  id            Int      @id @default(autoincrement())
-  email         String   @db.VarChar(255)
-  originalS3URL String   @db.VarChar(255)
-  finalS3URL    String   @db.VarChar(255)
-  heliaDID      String   @db.VarChar(255)
-  city          String   @db.VarChar(255)
-  district      String   @db.VarChar(255)
-  latitude      Float
-  longitude     Float
-  status        String   @db.VarChar(255)
-  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
-  user          User     @relation(fields: [email], references: [email])
+  id               Int      @id @default(autoincrement())
+  email            String   @db.VarChar(255)
+  originalS3URL    String   @db.VarChar(255)
+  finalS3URL       String   @db.VarChar(255)
+  heliaDID         String   @db.VarChar(255)
+  city             String   @db.VarChar(255)
+  district         String   @db.VarChar(255)
+  latitude         Float
+  longitude        Float
+  status           String   @db.VarChar(255)
+  // Extended location fields
+  roadName         String?  @db.VarChar(255)
+  state            String?  @db.VarChar(255)
+  country          String?  @db.VarChar(255)
+  postalCode       String?  @db.VarChar(50)
+  neighborhood     String?  @db.VarChar(255)
+  landmark         String?  @db.VarChar(255)
+  placeId          String?  @db.VarChar(255)
+  formattedAddress String?  @db.Text
+  placeTypes       String?  @db.Text // JSON array stored as text
+  // ML detection fields
+  mlDetections     String?  @db.Text // JSON array of detections
+  mlPriority       String?  @db.VarChar(50)
+  mlConfidence     Float? // Average confidence of detections
+  totalDetections  Int? // Number of objects detected
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user             User     @relation(fields: [email], references: [email])
 
   @@map("fallen_tree")
 }
 
 model BrokenSign {
-  id            Int      @id @default(autoincrement())
-  email         String   @db.VarChar(255)
-  originalS3URL String   @db.VarChar(255)
-  finalS3URL    String   @db.VarChar(255)
-  heliaDID      String   @db.VarChar(255)
-  city          String   @db.VarChar(255)
-  district      String   @db.VarChar(255)
-  latitude      Float
-  longitude     Float
-  status        String   @db.VarChar(255)
-  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
-  user          User     @relation(fields: [email], references: [email])
+  id               Int      @id @default(autoincrement())
+  email            String   @db.VarChar(255)
+  originalS3URL    String   @db.VarChar(255)
+  finalS3URL       String   @db.VarChar(255)
+  heliaDID         String   @db.VarChar(255)
+  city             String   @db.VarChar(255)
+  district         String   @db.VarChar(255)
+  latitude         Float
+  longitude        Float
+  status           String   @db.VarChar(255)
+  // Extended location fields
+  roadName         String?  @db.VarChar(255)
+  state            String?  @db.VarChar(255)
+  country          String?  @db.VarChar(255)
+  postalCode       String?  @db.VarChar(50)
+  neighborhood     String?  @db.VarChar(255)
+  landmark         String?  @db.VarChar(255)
+  placeId          String?  @db.VarChar(255)
+  formattedAddress String?  @db.Text
+  placeTypes       String?  @db.Text // JSON array stored as text
+  // ML detection fields
+  mlDetections     String?  @db.Text // JSON array of detections
+  mlPriority       String?  @db.VarChar(50)
+  mlConfidence     Float? // Average confidence of detections
+  totalDetections  Int? // Number of objects detected
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user             User     @relation(fields: [email], references: [email])
 
   @@map("broken_sign")
 }
 
 model StreetLight {
-  id            Int      @id @default(autoincrement())
-  email         String   @db.VarChar(255)
-  originalS3URL String   @db.VarChar(255)
-  finalS3URL    String   @db.VarChar(255)
-  heliaDID      String   @db.VarChar(255)
-  city          String   @db.VarChar(255)
-  district      String   @db.VarChar(255)
-  latitude      Float
-  longitude     Float
-  status        String   @db.VarChar(255)
-  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
-  user          User     @relation(fields: [email], references: [email])
+  id               Int      @id @default(autoincrement())
+  email            String   @db.VarChar(255)
+  originalS3URL    String   @db.VarChar(255)
+  finalS3URL       String   @db.VarChar(255)
+  heliaDID         String   @db.VarChar(255)
+  city             String   @db.VarChar(255)
+  district         String   @db.VarChar(255)
+  latitude         Float
+  longitude        Float
+  status           String   @db.VarChar(255)
+  // Extended location fields
+  roadName         String?  @db.VarChar(255)
+  state            String?  @db.VarChar(255)
+  country          String?  @db.VarChar(255)
+  postalCode       String?  @db.VarChar(50)
+  neighborhood     String?  @db.VarChar(255)
+  landmark         String?  @db.VarChar(255)
+  placeId          String?  @db.VarChar(255)
+  formattedAddress String?  @db.Text
+  placeTypes       String?  @db.Text // JSON array stored as text
+  // ML detection fields
+  mlDetections     String?  @db.Text // JSON array of detections
+  mlPriority       String?  @db.VarChar(50)
+  mlConfidence     Float? // Average confidence of detections
+  totalDetections  Int? // Number of objects detected
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user             User     @relation(fields: [email], references: [email])
 
   @@map("street_light")
 }
 
 model Graffiti {
-  id            Int      @id @default(autoincrement())
-  email         String   @db.VarChar(255)
-  originalS3URL String   @db.VarChar(255)
-  finalS3URL    String   @db.VarChar(255)
-  heliaDID      String   @db.VarChar(255)
-  city          String   @db.VarChar(255)
-  district      String   @db.VarChar(255)
-  latitude      Float
-  longitude     Float
-  status        String   @db.VarChar(255)
-  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
-  user          User     @relation(fields: [email], references: [email])
+  id               Int      @id @default(autoincrement())
+  email            String   @db.VarChar(255)
+  originalS3URL    String   @db.VarChar(255)
+  finalS3URL       String   @db.VarChar(255)
+  heliaDID         String   @db.VarChar(255)
+  city             String   @db.VarChar(255)
+  district         String   @db.VarChar(255)
+  latitude         Float
+  longitude        Float
+  status           String   @db.VarChar(255)
+  // Extended location fields
+  roadName         String?  @db.VarChar(255)
+  state            String?  @db.VarChar(255)
+  country          String?  @db.VarChar(255)
+  postalCode       String?  @db.VarChar(50)
+  neighborhood     String?  @db.VarChar(255)
+  landmark         String?  @db.VarChar(255)
+  placeId          String?  @db.VarChar(255)
+  formattedAddress String?  @db.Text
+  placeTypes       String?  @db.Text // JSON array stored as text
+  // ML detection fields
+  mlDetections     String?  @db.Text // JSON array of detections
+  mlPriority       String?  @db.VarChar(50)
+  mlConfidence     Float? // Average confidence of detections
+  totalDetections  Int? // Number of objects detected
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  user             User     @relation(fields: [email], references: [email])
 
   @@map("graffiti")
 }

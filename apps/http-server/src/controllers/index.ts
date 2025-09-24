@@ -7,6 +7,7 @@ import streetLightPost from "./streetLightPost.js";
 import healthGet from "./healthGet.js";
 import signinPost from "./signinPost.js";
 import signupPost from "./signupPost.js";
+import dashboardGet from "./dashboardGet.js";
 
 export {
     brokenSignPost,
@@ -17,5 +18,6 @@ export {
     streetLightPost,
     signinPost,
     signupPost,
-    healthGet
+    healthGet,
+    dashboardGet
 };

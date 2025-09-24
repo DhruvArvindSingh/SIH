@@ -1,0 +1,248 @@
+
+[2025-09-22 22:40:45] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 22:41:25] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 22:42:08] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:42:57] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 22:44:57] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 22:45:06] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:45:18] Broken signage detection - File: broken_sign_test_1.webp
+Input image size: (367, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:45:57] Garbage detection - File: garbage_test_1.webp
+Input image size: (281, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:46:32] Streetlight detection - File: broken_streetlight_test_2.webp
+Input image size: (545, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:55:20] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 22:55:26] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:55:34] Broken signage detection - File: broken_sign_test_1.webp
+Input image size: (367, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:55:39] Garbage detection - File: garbage_test_1.webp
+Input image size: (281, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:55:46] Streetlight detection - File: broken_streetlight_test_2.webp
+Input image size: (545, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 22:58:58] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 22:59:03] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 23:01:17] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 23:01:27] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 23:01:32] Broken signage detection - File: broken_sign_test_1.webp
+Input image size: (367, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 23:02:17] Fallen tree detection - File: fallen_tree_test_2.webp
+Input image size: (333, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 23:02:25] Fallen tree detection - File: fallen_tree_test_3.webp
+Input image size: (333, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-22 23:57:39] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-22 23:57:47] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-23 23:10:32] Pothole detection - File: pothole_image_test_1.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-23 23:10:40] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-23 23:10:46] Fallen tree detection - File: fallen_tree_test_1.webp
+Input image size: (280, 390, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-09-23 23:10:52] Garbage detection - File: garbage_test_1.webp
+Input image size: (281, 500, 3)
+Overall priority: high
+Total detections: 1
+  - garbage (conf: 0.731) - bbox: [0.0, 120.68498229980469, 498.44915771484375, 281.0]
+==================================================
+
+[2025-09-23 23:12:06] Garbage detection - File: garbage_test_1.webp
+Input image size: (281, 500, 3)
+Overall priority: high
+Total detections: 1
+  - garbage (conf: 0.731) - bbox: [0.0, 120.68498229980469, 498.44915771484375, 281.0]
+==================================================
+
+[2025-09-24 13:12:58] Pothole detection - File: test@example.com-1758699778126-03f2f7ff-02ed-45e0-948c-c8663a6fa82a.jpg
+Input image size: (32, 32, 3)
+EXCEPTION: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+==================================================
+
+[2025-09-24 13:13:19] Pothole detection - File: test_image.jpg
+Input image size: (32, 32, 3)
+EXCEPTION: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+==================================================
+
+[2025-09-24 13:13:46] Pothole detection - File: test_image.jpg
+Input image size: (32, 32, 3)
+Overall priority: Low
+Total detections: 0
+==================================================
+
+[2025-09-24 13:14:30] Pothole detection - File: test@example.com-1758699870426-5a1774a9-e767-41d4-8422-344be49828d5.jpg
+ERROR: Invalid image file
+
+[2025-09-24 13:23:52] Pothole detection - File: try123@gmail.com-1758700432760-4bbac33a-be77-4470-94b0-6593027f2141.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-24 13:26:40] Pothole detection - File: try123@gmail.com-1758700599885-ffab0f03-0623-4777-a9ac-5155bdbd4629.png
+ERROR: Invalid image file
+
+[2025-09-24 13:27:15] Pothole detection - File: try123@gmail.com-1758700634878-283cd2f8-4356-47fd-bf92-a5d4899de0c2.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-24 13:41:04] Pothole detection - File: try123@gmail.com-1758701464488-22350b13-2662-4fed-90e4-df2b9d9499fb.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-09-24 13:58:23] Pothole detection - File: test@example.com-1758702502874-cccf0403-7e05-4c56-bfee-c6a9fabafb70.jpg
+ERROR: Invalid image file
+
+[2025-09-24 13:58:29] Pothole detection - File: stdin
+ERROR: Invalid image file
