@@ -246,3 +246,59 @@ ERROR: Invalid image file
 
 [2025-09-24 13:58:29] Pothole detection - File: stdin
 ERROR: Invalid image file
+
+[2025-09-24 15:22:44] Pothole detection - File: try123@gmail.com-1758707563986-d2674f64-2e05-46e5-96a9-b652818fb6d2.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-12-10 12:46:10] Garbage detection - File: dsingh19072005@gmail.com-1765350970076-a264d365-75f5-4039-8b36-219d905e81c8.webp
+Input image size: (300, 500, 3)
+Overall priority: high
+Total detections: 1
+  - garbage (conf: 0.789) - bbox: [2.1146774291992188, 118.39497375488281, 498.0487365722656, 299.4747314453125]
+==================================================
+
+[2025-12-10 12:52:22] Broken signage detection - File: dsingh19072005@gmail.com-1765351341915-622fd913-a5f6-47d3-bc0c-243a7681801f.webp
+Input image size: (367, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-12-10 12:54:21] Pothole detection - File: dsingh19072005@gmail.com-1765351461381-2b9cb336-ca68-4aa6-a7ee-15619cd69abd.webp
+Input image size: (334, 500, 3)
+Overall priority: High
+Total detections: 2
+  - pothole (conf: 0.836) - bbox: [150, 131, 437, 221]
+  - pothole (conf: 0.718) - bbox: [63, 27, 199, 79]
+==================================================
+
+[2025-12-10 13:08:00] Garbage detection - File: dsingh19072005@gmail.com-1765352280412-2012634b-87ad-4a4e-a879-00ae97449f6c.jpg
+Input image size: (496, 612, 3)
+Overall priority: high
+Total detections: 3
+  - garbage (conf: 0.459) - bbox: [32.06495666503906, 237.8598175048828, 598.234130859375, 496.0]
+  - garbage (conf: 0.443) - bbox: [287.20556640625, 0.0, 612.0, 283.78118896484375]
+  - garbage (conf: 0.422) - bbox: [93.24189758300781, 239.57119750976562, 540.6757202148438, 466.3486328125]
+==================================================
+
+[2025-12-10 13:08:49] Broken signage detection - File: dsingh19072005@gmail.com-1765352328628-45e1fb34-8c41-4b86-9d50-c906d963830d.jpg
+Input image size: (333, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-12-10 13:09:22] Broken signage detection - File: dsingh19072005@gmail.com-1765352362222-a3becf83-a5af-4bef-8f65-9551416c544b.jpg
+Input image size: (375, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
+
+[2025-12-10 16:28:07] Garbage detection - File: dsingh19072005@gmail.com-1765364286438-8a140b24-d687-4832-88a4-dbf9ef2bb152.png
+Input image size: (731, 500, 3)
+Overall priority: low
+Total detections: 0
+==================================================
